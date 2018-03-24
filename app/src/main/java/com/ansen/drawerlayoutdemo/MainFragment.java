@@ -20,13 +20,13 @@ import android.widget.TextView;
  * @PACKAGE_NAME: com.android.drawerlayoutdemo
  * @Description: TODO
  */
-public class ChatFragment extends Fragment {
+public class MainFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-        textView.setText("    Chat Fragmenton");
+        textView.setText("    Main Fragmenton");
         NestedScrollView scrollView = new NestedScrollView(getActivity());
         scrollView.addView(textView);
         return scrollView;

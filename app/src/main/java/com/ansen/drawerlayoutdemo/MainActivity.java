@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private SettingsFragment mSettingsFragment;
-    private ChatFragment mChatFragment;
+    private MainFragment mMainFragment;
     private AboutFragment mAboutFragment;
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawer;
@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
 
-        mChatFragment = new ChatFragment();
+        mMainFragment = new MainFragment();
         mSettingsFragment = new SettingsFragment();
         mAboutFragment = new AboutFragment();
-        switchFragment(mChatFragment, false);
+        switchFragment(mMainFragment, false);
 
         getSupportFragmentManager().registerFragmentLifecycleCallbacks(new FragmentManager.FragmentLifecycleCallbacks() {
             @Override
             public void onFragmentResumed(FragmentManager fm, Fragment f) {
                 super.onFragmentResumed(fm, f);
-                if (f instanceof ChatFragment) {
+                if (f instanceof MainFragment) {
                     getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                     toggle.setDrawerIndicatorEnabled(true);
                     getSupportActionBar().setTitle("DrawerLayoutDemo");
